@@ -1,0 +1,33 @@
+Large-scale few-view CT benchmark
+
+Problem: matrix-free parallel-beam X-ray CT reconstruction
+Image: 1024 x 1024
+Unknowns: 1,048,576
+Views: 64
+Measurements: 65,536
+m/n: 0.062500
+
+Inverse problem:
+    min_x ||Ax-b||_2^2 + lambda ||x||_2^2
+
+Solvers:
+    CG   = CG on regularised normal equations
+    PCG  = diagonally preconditioned CG
+    LSQR = Golub-Kahan least-squares
+    LSMR = Golub-Kahan minimum-residual least-squares
+
+A is matrix-free. No explicit CT system matrix is stored.
+
+LSMR/LSQR comparison is motivated by:
+Chillaron Perez, M., Vidal, V.E., Verdu, G.J., Quintana-Orti, G.
+Few-View CT Image Reconstruction via Least-Squares Methods:
+Assessment and Optimization.
+Nuclear Science and Engineering, 198(2), 193-206 (2024).
+DOI: 10.1080/00295639.2023.2199677
+
+Important: the script does not force LSQR to win. The measured results
+should determine the conclusion.
+
+Speedup convention:
+    competitor_time / LSQR_time
+so >1 means LSQR is faster.

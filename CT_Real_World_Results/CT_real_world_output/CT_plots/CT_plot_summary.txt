@@ -1,0 +1,23 @@
+CT solver plotting summary
+Rows in results file: 40
+Lambdas: [1e-06, 1e-05, 0.0001, 0.001, 0.01]
+Solvers: ['CG', 'PCG', 'LSQR', 'LSMR']
+Image unknowns N: 1048576
+Measurements M: 65536
+Views: 64
+
+Best reconstruction-error row for each solver:
+          Lambda  Mean_Relative_Reconstruction_Error   Mean_Time  Mean_Iterations
+Solver                                                                           
+CG      0.000010                            0.239554  772.408396            120.0
+PCG     0.000100                            1.840985  772.172190            120.0
+LSQR    0.000010                            0.239556  775.123276            120.0
+LSMR    0.000001                            0.239574  861.957026            120.0
+
+Fastest-runtime row for each solver:
+        Lambda   Mean_Time  Mean_Relative_Reconstruction_Error  Mean_Iterations
+Solver                                                                         
+CG        0.01  753.382174                            0.239572            120.0
+PCG       0.01  753.605444                            1.841168            120.0
+LSQR      0.01  756.367506                            0.239631            120.0
+LSMR      0.01  755.251594                            0.239591            120.0
